@@ -1,0 +1,253 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #09090d;
+    --card: #14141c;
+    --text: #f5f5f7;
+    --muted: #a3a3ad;
+    --accent: #ff3030;
+    --border: #292932;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    background: #0e0e14;
+    border-bottom: 1px solid var(--border);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h1 span,
+h2 span {
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+button,
+.main-button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+button:hover,
+.main-button:hover {
+    background: #d71919;
+    transform: translateY(-2px);
+}
+
+.hero {
+    min-height: 520px;
+    padding: 110px 10%;
+    background:
+        radial-gradient(ellipse at 80% 30%, #381518 0%, transparent 40%),
+        linear-gradient(135deg, #101016, #09090d);
+}
+
+.small-title {
+    color: var(--accent);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: clamp(42px, 7vw, 80px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.description {
+    max-width: 480px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.cars {
+    padding: 80px 7%;
+}
+
+.cars > h2,
+.about h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.car-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.car-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px #ff303018;
+}
+
+.car-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.car-info {
+    padding: 22px;
+}
+
+.car-info h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.car-info p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about {
+    text-align: center;
+    padding: 70px 10%;
+    background: var(--card);
+}
+
+.about p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000000bb;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+.modal-content {
+    background: var(--card);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 35px;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 7px 10px;
+}
+
+body.light {
+    --bg: #eeeeF3;
+    --card: #ffffff;
+    --text: #181820;
+    --muted: #555560;
+    --border: #d3d3dc;
+}
+
+body.light header {
+    background: #ffffff;
+}
+
+body.light .hero {
+    background: linear-gradient(135deg, #e4e4ec, #f5f5f8);
+}
+
+@media (max-width: 800px) {
+    .car-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    header {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .car-container {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 80px 7%;
+    }
+}
